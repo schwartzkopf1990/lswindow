@@ -20,11 +20,7 @@
     .container{max-width:1100px;margin:0 auto;padding:28px}
 
     header{display:flex;align-items:center;gap:18px;padding:10px 0;position:sticky;top:0;background:white;z-index:10;box-shadow:0 2px 6px rgba(0,0,0,0.05)}
-    .logo{display:flex;align-items:center;gap:16px;max-width:180px}
-    .logo img{max-width:100%;height:auto}
-    .brand{line-height:1}
-    .brand h1{margin:0;font-size:20px;color:var(--brand)}
-    .brand p{margin:2px 0 0;font-size:14px;color:var(--muted)}
+    .logo svg{height:80px;display:block}
 
     .hero{display:grid;grid-template-columns:1fr;gap:18px;align-items:center;padding:28px 0}
     .hero-inner{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 6px 20px rgba(11,58,102,0.06)}
@@ -60,25 +56,20 @@
     footer a:hover{text-decoration:underline;color:var(--gold);transform:scale(1.05)}
     footer a:hover .icon{fill:var(--gold)}
     .icon{width:14px;height:14px;fill:var(--brand);transition:fill 0.3s ease}
-
-    @media (max-width:880px){
-      .services{grid-template-columns:1fr}
-      .contact{grid-template-columns:1fr}
-      .logo{max-width:140px}
-      .tag{font-size:22px}
-      footer{font-size:12px;text-align:center}
-    }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
       <div class="logo">
-        <img src="logo.png" alt="LS Window Cleaning Logo">
-        <div class="brand">
-          <h1>LS Window Cleaning Services</h1>
-          <p>Professional. Reliable. Streak-Free Results.</p>
-        </div>
+        <!-- Inline SVG Logo -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="80">
+          <rect width="512" height="512" fill="white"/>
+          <text x="50%" y="20%" dominant-baseline="middle" text-anchor="middle" font-size="96" font-family="Arial Black, sans-serif" fill="#0b3a66">LS</text>
+          <text x="50%" y="65%" dominant-baseline="middle" text-anchor="middle" font-size="36" font-family="Arial Black, sans-serif" fill="#0b3a66">WINDOW CLEANING</text>
+          <text x="50%" y="75%" dominant-baseline="middle" text-anchor="middle" font-size="28" font-family="Arial, sans-serif" fill="#0b3a66">SERVICES</text>
+          <text x="50%" y="90%" dominant-baseline="middle" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" font-style="italic" fill="#0b3a66">Our Services Include</text>
+        </svg>
       </div>
       <div style="margin-left:auto;text-align:right">
         <div style="font-weight:700;color:var(--brand);font-size:18px">Call Today</div>
@@ -87,32 +78,11 @@
     </header>
 
     <section class="hero">
-      <div style="display:flex;align-items:center;justify-content:center">
-        <!-- Recreated Banner Based on Original Flyer -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 350" style="max-width:100%">
-          <defs>
-            <linearGradient id="bannerGradient" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#0b3a66" />
-              <stop offset="100%" stop-color="#0f5b8a" />
-            </linearGradient>
-            <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="rgba(255,255,255,0.6)" />
-              <stop offset="100%" stop-color="rgba(255,255,255,0)" />
-            </linearGradient>
-          </defs>
-          <rect width="1000" height="350" rx="30" fill="url(#bannerGradient)" />
-          <rect width="1000" height="175" rx="30" fill="url(#shine)" />
-
-          <text x="50%" y="45%" dominant-baseline="middle" text-anchor="middle" font-size="120" fill="white" font-family="Arial Black, sans-serif" letter-spacing="3">LS</text>
-          <text x="50%" y="65%" dominant-baseline="middle" text-anchor="middle" font-size="48" fill="white" font-family="Arial, sans-serif" font-weight="600">Window Cleaning Services</text>
-          <text x="50%" y="82%" dominant-baseline="middle" text-anchor="middle" font-size="28" fill="white" font-family="Arial, sans-serif" font-style="italic">Our results are clear!</text>
-        </svg>
-      </div>
       <div class="hero-inner">
         <h2 class="tag">Our results are clear!</h2>
         <p class="tagline">Commercial or residential — we make your glass shine and your property look its best. Fast, friendly crews with eco-friendly solutions and full insurance.</p>
         <div class="cta-row">
-          <button class="btn" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'})">Get a Free Estimate</button>
+          <button class="btn">Get a Free Estimate</button>
           <a href="#services" class="btn secondary" style="display:inline-flex;align-items:center;gap:8px;padding:10px 14px;text-decoration:none">View Services</a>
         </div>
       </div>
@@ -124,8 +94,8 @@
         <div class="card">
           <h3>Window Cleaning <span class="badge">Most Popular</span></h3>
           <ul>
-            <li>Residential House Packages</li>
-            <li>Commercial Contracts <span class="inline-badge">Customizable</span></li>
+            <li>Residential Window Cleaning</li>
+            <li>Commercial Window Cleaning <span class="inline-badge">Customizable</span></li>
             <li>Streak-free hand wash & squeegee finishing</li>
           </ul>
         </div>
@@ -148,8 +118,8 @@
         <div class="card">
           <h3>Service Area & Scheduling</h3>
           <ul>
-            <li>Flexible scheduling — weekdays & weekends</li>
-            <li>Commercial contracts and one-time jobs</li>
+            <li>Commercial cleaning packages</li>
+            <li>Residential house packages</li>
           </ul>
         </div>
       </div>
@@ -178,29 +148,25 @@
         <h3 style="margin-top:0;color:var(--brand)">Contact Us Today</h3>
         <div class="phone">810-627-0172</div>
         <p class="small">Email: <a href="mailto:lswcs25@gmail.com">lswcs25@gmail.com</a></p>
-        <p class="small">Facebook: <a href="https://www.facebook.com/LSWindowCleaningServices" target="_blank">LS Window Cleaning Services</a></p>
-
-        <hr style="margin:14px 0;border:none;border-top:1px solid rgba(11,58,102,0.06)">
-        <p style="margin:0;color:var(--muted)">We provide free on-site estimates, use eco-friendly cleaning solutions, and are fully insured for your peace of mind.</p>
+        <p class="small">Facebook: <a href="https://www.facebook.com/profile.php?id=61578064551485" target="_blank">LS Window Cleaning Services</a></p>
       </div>
 
       <div class="card">
         <h3 style="margin-top:0;color:var(--brand)">Request a Free Estimate</h3>
-        <form id="contact-form" onsubmit="event.preventDefault();sendForm();">
+        <form id="contact-form">
           <label style="display:block;margin-top:8px;font-size:14px;color:var(--muted)">Name</label>
-          <input type="text" id="name" required style="width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid rgba(11,58,102,0.08)">
+          <input type="text" required style="width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid rgba(11,58,102,0.08)">
 
           <label style="display:block;margin-top:8px;font-size:14px;color:var(--muted)">Phone or Email</label>
-          <input type="text" id="contact" required style="width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid rgba(11,58,102,0.08)">
+          <input type="text" required style="width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid rgba(11,58,102,0.08)">
 
           <label style="display:block;margin-top:8px;font-size:14px;color:var(--muted)">Message / Address</label>
-          <textarea id="message" rows="4" style="width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid rgba(11,58,102,0.08)"></textarea>
+          <textarea rows="4" style="width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid rgba(11,58,102,0.08)"></textarea>
 
           <div style="margin-top:12px;display:flex;gap:10px">
             <button class="btn" type="submit">Send Request</button>
             <button class="btn secondary" type="button" onclick="window.location='tel:8106270172'">Call: 810-627-0172</button>
           </div>
-          <p id="form-note" style="color:var(--muted);font-size:13px;margin-top:10px"></p>
         </form>
       </div>
     </section>
@@ -208,9 +174,10 @@
     <footer>
       <div>© <span id="year"></span> LS Window Cleaning Services — Free Estimates • Eco-Friendly Solutions • Fully Insured</div>
       <div style="margin-top:8px">
-        <a href="tel:8106270172">
-          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.6,10.8c1.5,3,3.9,5.4,6.9,6.9l2.3-2.3c0.3-0.3,0.8-0.4,1.2-0.2c1.3,0.5,2.7,0.8,4.2,0.8c0.7,0,1.3,0.6,1.3,1.3v3.7 c0,0.7-0.6,1.3-1.3,1.3C10.4,22.3,1.7,13.6,1.7,2.9c0-0.7,0.6-1.3,1.3-1.3H6.7c0.7,0,1.3,0.6,1.3,1.3c0,1.5,0.3,2.9,0.8,4.2 c0.1,0.4,0,0.9-0.2,1.2L6.6,10.8z"/></svg>
-          Call: 810-627-0172
-        </a> | 
-        <a href="mailto:lswcs25@gmail.com">
-          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 13.5l8-6V6l-8 6-8-6v1.5l8 6zm8-9H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6.5c0-
+        <a href="tel:8106270172">Call: 810-627-0172</a> |
+        <a href="mailto:lswcs25@gmail.com">Email Us</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
